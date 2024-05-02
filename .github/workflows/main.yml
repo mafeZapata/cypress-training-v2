@@ -1,6 +1,7 @@
-name: Continuous integration
+name: Continuous Integration
 
-on: [pull_request]
+on:
+  pull_request:
 
 jobs:
   cypress-run:
@@ -9,16 +10,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Setup
+      - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 16
           cache: "npm"
 
-      - name: Install
+      - name: Install Dependencies
         run: npm ci
 
-      - name: Code style
+      - name: Code Style Check
         run: |
           npm install eslint --save-dev
           npm run lint
