@@ -11,7 +11,7 @@
     "ui-testing",
     "dojo",
     "practice",
-    "cypress"
+    "cypress: 13.8.1"
   ],
   "author": "Maria Fernanda Zapata",
   "license": "MIT",
