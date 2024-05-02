@@ -1,0 +1,21 @@
+{
+  "name": "cypress-training",
+  "version": "1.0.0",
+  "description": "This is a Workshop about Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open",
+    "test:open": "cypress open"
+  },
+  "keywords": [
+    "ui-testing",
+    "dojo",
+    "practice",
+    "cypress"
+  ],
+  "author": "Maria Fernanda Zapata",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^13.8.1"
+  }
+}
