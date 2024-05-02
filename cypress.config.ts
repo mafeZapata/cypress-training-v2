@@ -1,9 +1,11 @@
-const { defineConfig } = require("cypress");
+import { defineConfig } from "cypress";
 
-module.exports = defineConfig({
-  e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
+   export default defineConfig({
+    e2e: {
+     chromeWebSecurity: false,
+     setupNodeEvents(on, config) {
+       // e2e testing node events setup code
+       return config;
+      },
     },
-  },
-});
+  });
