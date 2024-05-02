@@ -4,7 +4,8 @@
   "description": "This is a Workshop about Cypress",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open"
+    "test": "cypress open",
+    "test:open": "cypress open"
   },
   "keywords": [
     "ui-testing",
@@ -13,5 +14,8 @@
     "cypress"
   ],
   "author": "Maria Fernanda Zapata",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^13.8.1"
+  }
 }
