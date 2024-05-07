@@ -1,5 +1,3 @@
-import { groupBy } from "cypress/types/lodash";
-
 describe("Buy a black t-shirt", () => {
     it("then the t-shirt should be bought", () => {
         cy.visit("https://www.saucedemo.com/"); 
