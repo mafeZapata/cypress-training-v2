@@ -1,26 +1,34 @@
+import { LoginPage } from "../page/index";
+import { ProductsList } from "../page/products-list.page";
+import { Item } from "../page/item.page";
+import { ShoppingCar } from "../page/shopping-cart.page";
+import { Information } from "../page/information.page";
+import { CheckoutComplete } from "../page/checkout-complete.page";
+
+
+const loginPage = new LoginPage();
+const productsList = new ProductsList();
+const item = new Item();
+const shoppingCar = new ShoppingCar();
+const information = new Information();
+const checkoutComplete = new CheckoutComplete();
+
+
 describe("Buy a black t-shirt", () => {
-    it("then the t-shirt should be bought", () => {
-        cy.visit("https://www.saucedemo.com/"); 
-        cy.get(".login-box > form > div > input#user-name").type("standard_user"); 
-        cy.get(".login-box > form > div > input#password").type("secret_sauce"); 
-        cy.get("input[type='submit']").click(); 
-        cy.wait(2000);
-        cy.get('[data-test="item-1-title-link"] > [data-test="inventory-item-name"]').click();
-        cy.wait(2000);
-        cy.get('[data-test="add-to-cart"]').click();
-        cy.wait(2000);
-        cy.get('[data-test="shopping-cart-link"]').click();
-        cy.wait(2000);
-        cy.get('[data-test="checkout"]').click();
-        cy.get('[data-test="firstName"]').type("Cypress");
-        cy.get('[data-test="lastName"]').type("Workshop");
-        cy.get('[data-test="postalCode"]').type("00000");
-        cy.get('[data-test="continue"]').click();
-        cy.wait(2000);
-        cy.get('[data-test="finish"]').click();
-        cy.get("#contents_wrapper > .checkout_complete_container > h2").should(
-            "have.text",
-            "Thank you for your order!"
-       ); 
-    });
+  it("then the t-shirt should be bought", () => {
+    loginPage.visitLoginPage();
+    loginPage.signIn();
+    productsList.selectProduct();
+    item.AddItemToCar();
+    shoppingCar.viewShoppingCar();
+    shoppingCar.checkout();
+    information.fillInformation();
+    information.continue();
+    checkoutComplete.clickOnFinish();
+    checkoutComplete.verifyMessage();
+
+  });
 });
+
+
+
