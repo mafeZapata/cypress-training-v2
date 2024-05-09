@@ -15,9 +15,9 @@ class LoginPage {
       cy.visit(this.loginURL);
     }
   
-    public signIn(): void {
-      cy.get(this.userNameField).type("standard_user");
-      cy.get(this.passwordField).type("secret_sauce");
+    public signIn(username: string , password: string): void {
+      cy.get(this.userNameField).type(username);
+      cy.get(this.passwordField).type(password);
       cy.get(this.loginButton).click();
     }
   }

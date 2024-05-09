@@ -11,11 +11,11 @@ class Information {
         this.postalcode = '[data-test="postalCode"]';
         this.continueButton = '[data-test="continue"]';
     }
-
-    public fillInformation (): void {
-        cy.get(this.firstName).type("Cypress");
-        cy.get(this.lastName).type("Workshop");
-        cy.get(this.postalcode).type("00000");
+  
+    public fillInformation (firstName: string, lastName: string, postalCode: string): void {
+        cy.get(this.firstName).type(firstName);
+        cy.get(this.lastName).type(lastName);
+        cy.get(this.postalcode).type(postalCode);
     }
 
     public continue(): void {
