@@ -13,8 +13,7 @@ class CheckoutComplete{
     }
 
     public verifyMessage(): void {
-        cy.get(this.endingInformation).should(  "have.text",
-        "Thank you for your order!")
+        cy.get(this.endingInformation).should("have.text", "Thank you for your order!")
     }
 }
 

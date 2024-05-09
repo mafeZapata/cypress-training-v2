@@ -1,33 +1,37 @@
-import { LoginPage } from "../page/index";
-import { ProductsList } from "../page/products-list.page";
-import { Item } from "../page/item.page";
-import { ShoppingCar } from "../page/shopping-cart.page";
-import { Information } from "../page/information.page";
-import { CheckoutComplete } from "../page/checkout-complete.page";
-
-
-const loginPage = new LoginPage();
-const productsList = new ProductsList();
-const item = new Item();
-const shoppingCar = new ShoppingCar();
-const information = new Information();
-const checkoutComplete = new CheckoutComplete();
-
+import { LoginPage , ProductsList, Item , ShoppingCar, Information, CheckoutComplete} from "../page";
 
 describe("Buy a black t-shirt", () => {
+  let loginPage: LoginPage;
+  let productsList: ProductsList;
+  let item: Item;
+  let shoppingCar: ShoppingCar;
+  let information:  Information;
+  let checkoutComplete: CheckoutComplete;
+
+  before(()=> {
+     loginPage = new LoginPage();
+     productsList = new ProductsList();
+     item = new Item();
+     shoppingCar = new ShoppingCar();
+     information = new Information();
+     checkoutComplete = new CheckoutComplete();
+  });
+  
+
   it("then the t-shirt should be bought", () => {
     loginPage.visitLoginPage();
-    loginPage.signIn();
+    loginPage.signIn("standard_user","secret_sauce");
     productsList.selectProduct();
     item.AddItemToCar();
     shoppingCar.viewShoppingCar();
     shoppingCar.checkout();
-    information.fillInformation();
+    information.fillInformation("Cypress", "Workshop","00000");
     information.continue();
     checkoutComplete.clickOnFinish();
     checkoutComplete.verifyMessage();
 
   });
+
 });
 
 
