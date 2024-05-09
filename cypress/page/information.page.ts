@@ -11,7 +11,7 @@ class Information {
         this.postalcode = '[data-test="postalCode"]';
         this.continueButton = '[data-test="continue"]';
     }
-
+  
     public fillInformation (firstName: string, lastName: string, postalCode: string): void {
         cy.get(this.firstName).type(firstName);
         cy.get(this.lastName).type(lastName);
