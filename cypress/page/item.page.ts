@@ -3,7 +3,7 @@ class Item {
     private addItem: string;
 
     constructor() {
-        this.addItem = '[data-test="add-to-cart"]';
+        this.addItem = '[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]';
     }
 
     public  AddItemToCar(): void {
