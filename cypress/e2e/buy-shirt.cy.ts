@@ -22,7 +22,7 @@ describe("Buy a black t-shirt", () => {
   it("then the t-shirt should be bought", () => {
     loginPage.visitLoginPage();
     loginPage.signIn("standard_user","secret_sauce");
-    productsList.selectProduct();
+    productsList.findProductByName('Sauce Labs Bolt T-Shirt');
     item.AddItemToCar();
     shoppingCar.viewShoppingCar();
     shoppingCar.checkout();
