@@ -1,3 +1,4 @@
+
 import { LoginPage , ProductsList, Item , ShoppingCar, Information, CheckoutComplete} from "../page";
 
 describe("Buy a black t-shirt", () => {
@@ -31,7 +32,6 @@ describe("Buy a black t-shirt", () => {
     checkoutComplete.verifyMessage();
 
   });
-
 });
 
 

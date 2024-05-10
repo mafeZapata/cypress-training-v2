@@ -23,8 +23,6 @@ class ProductsList {
             }
           });
       }
-      
-
 }
 
 export {ProductsList};
